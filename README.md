@@ -9,11 +9,15 @@ npm run serve
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Step 1 : Avoir le temps du jour pour Grenoble
+## Step 1 : Afficher la météo du jour pour Grenoble
 
-Sur la page d'une ville récupérer e afficher le temps du jour.
+- Sur la page d'une ville récupérer et afficher la météo du jour.
+- Le page d'une ville correspond au composant `City` 
+- Utiliser les getters `Vuex` pour récupérer les coordonnées de la ville (https://vuex.vuejs.org/guide/getters.html)
+- Utiliser le service d'API pour récupérer la météo en function des coordonnées GPS de la ville lorsque le composant est créé (https://it.vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks)
 
 ## Step 2 : Avoir le temps du jour pour toutes les villes Zenika
 
