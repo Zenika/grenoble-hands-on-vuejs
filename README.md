@@ -31,6 +31,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Step 4 : Avoir la possibilité de passer en Fahrenheit
 
+- Ajouter des radios boutons, checkbox ou n'importe quoi d'autre pour choisir l'unité à afficher 
+- Créer une méthode VueJS pour retourner les degrees dans la bonne unité (https://vuejs.org/v2/api/#methods)
+- Appliquer la fonction de conversion `F = C * 9/5 + 32`
+
 ## Step 5 : Avoir une nouvelle page pour enregistrer une nouvelle ville
 
 ## Step 6 : Avoir une nouvelle page avec le details tous les trois heures
