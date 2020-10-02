@@ -35,6 +35,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Créer une méthode VueJS pour retourner les degrees dans la bonne unité (https://vuejs.org/v2/api/#methods)
 - Appliquer la fonction de conversion `F = C * 9/5 + 32`
 
-## Step 5 : Avoir une nouvelle page pour enregistrer une nouvelle ville
+## Step 5 : Ajouter un page pour enregistrer une nouvelle ville
+
+- Créer un nouveau composant dans le dossier `views`
+- Créer dans le router une route liée à ce composant 
+- Modifier le store pour créer une action et une mutation (https://vuex.vuejs.org/guide/actions.html)
+- Créer un formulaire avec des inputs pour le nom de la vile, latitude et longitude
+- Dispatcher l'action créée précédemment lors de l'envoi du formulaire 
 
 ## Step 6 : Avoir une nouvelle page avec le details tous les trois heures
