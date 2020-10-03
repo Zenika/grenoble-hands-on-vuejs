@@ -21,6 +21,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Step 2 : Afficher la météo du jour pour toutes les villes Zenika
 
+- Pour le moment on affiche uniquement la première ville de la liste dans le composant `Home`, itérer sur la liste pour toutes les afficher (https://vuejs.org/v2/guide/list.html) 
+- Le paramètre de la route `city` est mappé sur les props du composant que l'on peut récupérer avec `this.city`
 - Utiliser les getters `Vuex` pour récupérer les coordonnées de la ville récupérée des `props` du composant (https://vuex.vuejs.org/guide/getters.html)
 - Appeler le service d'API avec ces coordonnées
 
