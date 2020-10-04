@@ -8,6 +8,14 @@ npm run lint
 npm run serve
 ```
 
+## Dépendances
+
+- Framework: [Vue](https://v3.vuejs.org/guide) 
+- Router: [Vue Router](https://router.vuejs.org/)
+- State management: [Vuex](https://vuex.vuejs.org/)
+- Weather data: [7timer](http://www.7timer.info/)
+- Build tools: [Vue CLI](https://cli.vuejs.org/guide/)
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
