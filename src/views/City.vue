@@ -5,7 +5,7 @@
         Go back home
       </router-link>
     </nav>
-    <h1>{{ cityName }}</h1>
+    <h1>GRENOBLE</h1>
     <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude"/>
   </div>
 </template>
@@ -17,21 +17,10 @@ export default {
   components: {
     LMap
   },
-  props: {
-    cityName: {
-      type: String,
-      required: true
-    }
-  },
-  computed: {
-    cityPosition() {
-      return this.$store.getters['getCityPosition'](this.cityName)
-    },
-    cityLatitude() {
-      return this.cityPosition[0]
-    },
-    cityLongitude() {
-      return this.cityPosition[1]
+  data() {
+    return {
+      cityLatitude: 45.183916,
+      cityLongitude: 5.703630,
     }
   }
 }
