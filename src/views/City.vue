@@ -20,6 +20,12 @@ export default {
   components: {
     LMap
   },
+  props: {
+    cityName: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       cityLatitude: 45.183916,
