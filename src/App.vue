@@ -1,22 +1,28 @@
 <template>
-    <div>
-      <header>
-        <h1>
-          Zenika Cities weather
-        </h1>
-        <h2>
-          The best weather app in Vue
-        </h2>
-      </header>
-      <router-view />
-      <footer>
-        <p>
-          Developed by
-          <a href="https://github.com/P0ppoff" rel="nofollow">Jules Hablot</a> and
-          <a href="https://github.com/chocho01" rel="nofollow">Martin Choraine</a> with
-          <a href="http://www.7timer.info/index.php" rel="nofollow">7Timer!</a> for
-          <a href="https://zenika.com/" rel="nofollow">Zenika</a> with ❤️
-        </p>
-      </footer>
+
+  <Navbar/>
+
+  <section class="section">
+    <div class="container">
+      <router-view/>
     </div>
+  </section>
+
+  <Footer/>
+
 </template>
+
+<style>
+
+ section.section {
+   min-height: calc(100vh - 64px - 168px);
+ }
+
+</style>
+<script>
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+export default {
+  components: {Footer, Navbar}
+}
+</script>

@@ -28,5 +28,6 @@ export default {
 <style scoped>
 #mapId {
   height: 350px;
+  width: 100%;
 }
 </style>
