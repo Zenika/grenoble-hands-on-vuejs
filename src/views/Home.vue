@@ -4,7 +4,7 @@
       Offices
     </h2>
     <nav>
-      <router-link :to="{ name: 'City', params: { city: cities[0]}}">
+      <router-link :to="{ name: 'City', params: { cityName: cities[0]}}">
         <p>
           {{ cities[0] }}
         </p>
@@ -12,8 +12,6 @@
     </nav>
   </section>
 </template>
-
-
 <script>
 export default {
   computed: {

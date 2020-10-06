@@ -5,19 +5,22 @@
         Go back home
       </router-link>
     </nav>
-    <h1>{{ city }}</h1>
-    <!--<l-map :zoom="13" style="height: 350px" :center="position">
-      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-      <l-marker :lat-lng="position" />
-    </l-map>-->
+    <h1>GRENOBLE</h1>
+    <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude"/>
   </div>
 </template>
 <script>
+import LMap from "@/components/LMap";
+
 export default {
-  props: {
-    city: {
-      type: String,
-      required: true
+  name: 'City',
+  components: {
+    LMap
+  },
+  data() {
+    return {
+      cityLatitude: 45.183916,
+      cityLongitude: 5.703630,
     }
   }
 }
