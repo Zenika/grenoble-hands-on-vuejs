@@ -6,6 +6,18 @@
       <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude"/>
     </div>
     <div class="panel-block">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="degree" value="C" v-model="degree">
+          C°
+        </label>
+        <label class="radio">
+          <input type="radio" name="degree" value="F" v-model="degree">
+          F°
+        </label>
+      </div>
+    </div>
+    <div class="panel-block">
       <table class="table is-flex-grow-1">
         <thead>
         <tr>
@@ -23,8 +35,8 @@
                  alt=""
             />
           </td>
-          <td>{{ weather.temp2m.min }}°C</td>
-          <td>{{ weather.temp2m.max }}°C</td>
+          <td>{{displayInDegree(weather.temp2m.min)}} °{{degree}}</td>
+          <td>{{displayInDegree(weather.temp2m.max)}} °{{degree}}</td>
         </tr>
         </tbody>
       </table>
@@ -53,7 +65,13 @@ export default {
   },
   data() {
     return {
+      degree: 'C',
       weathers: null
+    }
+  },
+  methods: {
+    displayInDegree(temperature) {
+      return this.degree === 'C' ? temperature :  temperature * (9/5) + 32
     }
   },
   computed: {
