@@ -15,6 +15,7 @@ npm run serve
 - State management: [Vuex](https://vuex.vuejs.org/)
 - Weather data: [7timer](http://www.7timer.info/)
 - Build tools: [Vue CLI](https://cli.vuejs.org/guide/)
+- CSS: [Bulma](https://bulma.io/documentation/)
 
 ### Customize configuration
 
