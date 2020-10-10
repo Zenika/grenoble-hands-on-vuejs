@@ -16,15 +16,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>{{ weather?.date }}</td>
+        <tr v-for="weather of weathers" :key="weather.date">
+          <td>{{ weather.date }}</td>
           <td>
-            <img :src="`http://www.7timer.info/img/misc/about_civil_${ weather?.weather }.png`"
+            <img :src="`http://www.7timer.info/img/misc/about_civil_${ weather.weather }.png`"
                  alt=""
             />
           </td>
-          <td>{{ weather?.temp2m.min }}°C</td>
-          <td>{{ weather?.temp2m.max }}°C</td>
+          <td>{{ weather.temp2m.min }}°C</td>
+          <td>{{ weather.temp2m.max }}°C</td>
         </tr>
         </tbody>
       </table>
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      weather: null
+      weathers: null
     }
   },
   computed: {
@@ -61,7 +61,7 @@ export default {
     cityLongitude() { return this.$store.getters.getCityPosition(this.cityName)[1] }
   },
   created() {
-    API.getCityTodayWeather(this.cityLongitude, this.cityLatitude).then(w => this.weather = w)
+    API.getCityNextWeekWeather(this.cityLongitude, this.cityLatitude).then(w => this.weathers = w)
   }
 }
 </script>
