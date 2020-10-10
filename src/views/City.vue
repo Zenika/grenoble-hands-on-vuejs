@@ -17,10 +17,14 @@
         </thead>
         <tbody>
         <tr>
-          <td>Aujourd’hui</td>
-          <td><img src="http://www.7timer.info/img/misc/about_civil_clear.png" alt=""/></td>
-          <td>0°C</td>
-          <td>30°C</td>
+          <td>{{ weather?.date }}</td>
+          <td>
+            <img :src="`http://www.7timer.info/img/misc/about_civil_${ weather?.weather }.png`"
+                 alt=""
+            />
+          </td>
+          <td>{{ weather?.temp2m.min }}°C</td>
+          <td>{{ weather?.temp2m.max }}°C</td>
         </tr>
         </tbody>
       </table>
@@ -33,6 +37,7 @@
   </article>
 </template>
 <script>
+import API from "@/api/weather.api";
 import LMap from "@/components/LMap";
 
 export default {
@@ -50,17 +55,11 @@ export default {
     return {
       cityLatitude: 45.183916,
       cityLongitude: 5.703630,
-      weather: {
-        date: 20201004,
-        temp2m: {max: 31, min: 26},
-        max: 31,
-        min: 26,
-        weather: "ishower",
-        wind10m_max: 3
-      }
+      weather: null
     }
   },
-  mounted() {
+  created() {
+    API.getCityTodayWeather(this.cityLongitude, this.cityLatitude).then(w => this.weather = w)
   }
 }
 </script>
