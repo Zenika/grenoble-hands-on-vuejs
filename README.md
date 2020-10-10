@@ -56,4 +56,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Mettre des protections sur les inputs (non vide, entre -180 et 180…)
 - Dispatcher l’action créée précédemment lors de l’envoi du formulaire valide
 
-## Step 6 : Avoir une nouvelle page avec le details tous les trois heures
+## Bonus : Afficher la météo détaillée d'un ville
+
+- Une seconde API sur `7timer` permet d'obtenir une météo plus détaillée avec une prévision toute les 3 heures (http://www.7timer.info/bin/civil.php?lon=0&lat=0&unit=metric&output=json)
+- Créer un nouveau point d'entrée sur le service d'api pour consommer ces données
+- Afficher le résultat de la météo détaillée sur la page de la ville
+- Ajouter un bouton pour afficher le mode simple ou le mode détaillé 
