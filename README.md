@@ -32,6 +32,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Pour le moment on affiche uniquement la première ville de la liste dans le composant [`Home`](src/views/Home.vue), itérer sur la liste pour toutes les afficher (https://vuejs.org/v2/guide/list.html) 
 - Le paramètre de la route `/city` est mappé sur les props du composant que l’on peut récupérer avec `this.cityName`
 - Utiliser les getters `Vuex` pour récupérer les coordonnées de la ville : `[lattitude, longitude]` (https://vuex.vuejs.org/guide/getters.html)
+- Appeler le service d'API avec les coordonnées de la ville
+- Afficher la ville sur la carte et la météo du jour
 
 ## Step 3 : Afficher la météo des 8 prochains jours pour chaque ville
 
