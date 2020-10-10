@@ -11,6 +11,11 @@
           The best weather app in Vue
         </h2>
       </div>
+      <div class="navbar-menu navbar-end">
+        <router-link class="navbar-item" :to="{name: 'CreateCity'}">
+          Create city
+        </router-link>
+      </div>
     </div>
   </nav>
 </template>

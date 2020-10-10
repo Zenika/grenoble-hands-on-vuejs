@@ -21,8 +21,14 @@ export default createStore({
     getCities: state => Object.keys(state.latLongMap),
   },
   mutations: {
+    createCity(state, city) {
+      state.latLongMap[city.name] = [city.latitude, city.longitude]
+    }
   },
   actions: {
+    createCity(context, city) {
+      context.commit('createCity', city)
+    }
   },
   modules: {
   }
