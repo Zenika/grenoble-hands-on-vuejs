@@ -31,6 +31,7 @@ export default {
       cityLatitude: 45.183916,
       cityLongitude: 5.703630,
     }
-  }
+  },
+  mounted() {}
 }
 </script>
