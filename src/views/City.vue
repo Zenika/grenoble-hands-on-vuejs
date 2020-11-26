@@ -6,6 +6,26 @@
       <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude"/>
     </div>
     <div class="panel-block">
+      <table class="table is-flex-grow-1">
+        <thead>
+        <tr>
+          <th>Date</th>
+          <th>Weather</th>
+          <th>Min</th>
+          <th>Max</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Aujourd’hui</td>
+          <td><img src="http://www.7timer.info/img/misc/about_civil_clear.png" alt=""/></td>
+          <td>0°C</td>
+          <td>30°C</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel-block">
       <router-link to="/" class="button is-rounded">
         Go back home
       </router-link>
