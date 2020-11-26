@@ -30,8 +30,17 @@ export default {
     return {
       cityLatitude: 45.183916,
       cityLongitude: 5.703630,
+      weather: {
+        date: 20201004,
+        temp2m: {max: 31, min: 26},
+        max: 31,
+        min: 26,
+        weather: "ishower",
+        wind10m_max: 3
+      }
     }
   },
-  mounted() {}
+  mounted() {
+  }
 }
 </script>
