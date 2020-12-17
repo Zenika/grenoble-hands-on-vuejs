@@ -89,3 +89,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   <summary>Step 5</summary>
   https://github.com/Zenika/grenoble-hands-on-vuejs/compare/step4...step5
 </details>
+
+<details>
+  <summary>Bonus</summary>
+  https://github.com/Zenika/grenoble-hands-on-vuejs/compare/step5...bonus
+</details>
