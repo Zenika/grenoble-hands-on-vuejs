@@ -6,7 +6,7 @@ import L from 'leaflet';
 
 export default {
   name: "LMap",
-  props: ['zoom', 'lat', 'long'],
+  props: ['lat', 'long'],
   data() {
     return {
       map: null,

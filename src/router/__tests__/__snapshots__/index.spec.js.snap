@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router should match to snapshot 1`] = `
+Array [
+  Object {
+    "component": "HomeMockComponent",
+    "name": "Home",
+    "path": "/",
+  },
+  Object {
+    "component": "CreateCityMockComponent",
+    "name": "CreateCity",
+    "path": "/city/create",
+  },
+  Object {
+    "component": "CityMockComponent",
+    "name": "City",
+    "path": "/:cityName",
+    "props": true,
+  },
+]
+`;
