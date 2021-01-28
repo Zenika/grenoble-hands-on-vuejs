@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:ci": "vue-cli-service test:unit --ci",
+    "test:e2e": "cypress open",
     "test:mutation": "stryker run",
     "lint": "vue-cli-service lint"
   },
@@ -31,6 +32,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/test-utils": "^2.0.0-0",
     "babel-eslint": "^10.1.0",
+    "cypress": "^6.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "vue-cli-plugin-ci": "1.0.0",
