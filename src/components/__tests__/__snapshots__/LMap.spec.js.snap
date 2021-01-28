@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LMap.vue map leaflet should set tileLayer 1`] = `
+Array [
+  Array [
+    "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+    Object {
+      "attribution": "Map data &copy; <a href=\\"https://www.openstreetmap.org/\\">OpenStreetMap</a> contributors",
+      "maxZoom": 18,
+      "tileSize": 512,
+      "zoomOffset": -1,
+    },
+  ],
+]
+`;

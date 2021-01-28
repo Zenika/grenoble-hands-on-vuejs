@@ -3,7 +3,7 @@ import Home from '@/views/Home.vue'
 import City from '@/views/City.vue'
 import CreateCity from '@/views/CreateCity.vue'
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
