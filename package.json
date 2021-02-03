@@ -31,10 +31,12 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/test-utils": "^2.0.0-0",
+    "axe-core": "^4.1.1",
     "babel-eslint": "^10.1.0",
     "cypress": "^6.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "vue-axe": "^3.1.2",
     "vue-cli-plugin-ci": "1.0.0",
     "vue-jest": "^5.0.0-0"
   },
