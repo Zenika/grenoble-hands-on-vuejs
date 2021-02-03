@@ -21,6 +21,22 @@ npm run serve
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## 101 tests
+
+Un **code de qualité** doit avoir des tests car ils montrent que ton code marche et que tu gères les
+edge cases, on aime montrer la qualité du travail fourni.
+
+**La qualité c’est la confiance dans le code 🤑**
+
+On fait comme Elon Musk qui teste ses fusées 🚀, elles vont de plus en plus loin…
+
+On remonte la pyramide 🐫 :
+- niveau 0 : TS / lint / tests unitaires (pas composants)
+- niveau 1 : tests unitaires (composants)
+- niveau 2 : tests d’intégration (testing-library sur la forme + @vue/test-utils)
+- niveau 3 : mutation testing (tester nos tests)
+- niveau 4 : e2e (cypress) + a11y
+
 ## Step 1 : Afficher la météo du jour pour Grenoble
 
 - Sur la page d’une ville : récupérer et afficher la météo du jour
