@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`integration test component Home should print init state from store 1`] = `
+<section>
+  <h1 class="title">Offices</h1>
+  <div class="panel">
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+  </div>
+</section>
+`;
+
+exports[`unit test component Home should print list 1`] = `
+<section>
+  <h1 class="title">Offices</h1>
+  <div class="panel">
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+    <router-link-stub class="panel-block p-4" to="[object Object]"></router-link-stub>
+  </div>
+</section>
+`;

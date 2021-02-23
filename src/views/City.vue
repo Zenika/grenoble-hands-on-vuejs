@@ -81,6 +81,7 @@ import {setMinutes, add, format, parse} from 'date-fns'
 
 import API from "@/api/weather.api";
 import LMap from "@/components/LMap";
+import {toFahrenheit} from "@/utils/converter";
 
 export default {
   name: 'City',
@@ -103,7 +104,7 @@ export default {
   },
   methods: {
     displayInDegree(temperature) {
-      return this.degree === 'C' ? temperature : temperature * (9 / 5) + 32
+      return this.degree === 'C' ? temperature : toFahrenheit(temperature)
     },
     displayHour(time) {
       return format(setMinutes(add(new Date(), {hours: time + 1 - 3}), 0), 'dd/MM/yyyy HH:mm')

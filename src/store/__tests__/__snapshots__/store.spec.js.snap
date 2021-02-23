@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store test initial state 1`] = `
+Object {
+  "latLongMap": Object {
+    "BORDEAUX": Array [
+      44.848089,
+      -0.571017,
+    ],
+    "BREST": Array [
+      48.389397,
+      -4.499237,
+    ],
+    "GRENOBLE": Array [
+      45.183916,
+      5.70363,
+    ],
+    "LILLE": Array [
+      50.64867,
+      3.07552,
+    ],
+    "LYON": Array [
+      45.767443,
+      4.858798,
+    ],
+    "MONTREAL": Array [
+      45.523,
+      -73.5817,
+    ],
+    "NANTES": Array [
+      47.207408,
+      -1.556187,
+    ],
+    "PARIS": Array [
+      48.878932,
+      2.328487,
+    ],
+    "RENNES": Array [
+      48.113409,
+      -1.661249,
+    ],
+    "SINGAPOUR": Array [
+      1.2956,
+      103.858995,
+    ],
+  },
+}
+`;
