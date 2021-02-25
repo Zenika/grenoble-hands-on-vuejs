@@ -12,7 +12,7 @@
           C°
         </label>
         <label class="radio">
-          <input type="radio" name="degree" value="F" v-model="degree">
+          <input id="fahrenheit" type="radio" name="degree" value="F" v-model="degree">
           F°
         </label>
       </div>
@@ -45,7 +45,7 @@
                  alt=""
             />
           </td>
-          <td>{{ displayInDegree(weather.temp2m.min) }} °{{ degree }}</td>
+          <td class="temperature">{{ displayInDegree(weather.temp2m.min) }} °{{ degree }}</td>
           <td>{{ displayInDegree(weather.temp2m.max) }} °{{ degree }}</td>
         </tr>
         </tbody>
@@ -81,6 +81,7 @@ import {setMinutes, add, format, parse} from 'date-fns'
 
 import API from "@/api/weather.api";
 import LMap from "@/components/LMap";
+import {inFahrenheit} from "@/utils/converter";
 
 export default {
   name: 'City',
@@ -103,7 +104,7 @@ export default {
   },
   methods: {
     displayInDegree(temperature) {
-      return this.degree === 'C' ? temperature : temperature * (9 / 5) + 32
+      return this.degree === 'C' ? temperature : inFahrenheit(temperature)
     },
     displayHour(time) {
       return format(setMinutes(add(new Date(), {hours: time + 1 - 3}), 0), 'dd/MM/yyyy HH:mm')
