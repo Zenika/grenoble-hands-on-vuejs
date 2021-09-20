@@ -1,3 +1,0 @@
-# Redirects from what the browser requests to what we serve
-/api/*  http://www.7timer.info/bin/api.pl:splat  	200
-/*    	/index.html   								200

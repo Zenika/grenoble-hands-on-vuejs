@@ -71,6 +71,9 @@
     </div>
     <div class="panel-block">
       <router-link to="/" class="button is-rounded">
+        <span class="icon">
+          <i class="fas fa-home" :style="{'padding-right': '14px'}"></i>
+        </span>
         Go back home
       </router-link>
     </div>
