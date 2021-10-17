@@ -1,7 +1,9 @@
 <template>
   <h1 class="title">Cities weather</h1>
   <article class="panel is-primary">
-    <div class="panel-heading"><h2>{{ cityName }}</h2></div>
+    <div class="panel-heading">
+      <h2>{{ cityName }}</h2>
+    </div>
     <div class="panel-block">
       <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude"/>
     </div>
@@ -28,7 +30,8 @@
       </div>
     </div>
     <div class="panel-block" v-if="mode === 'simple'">
-      <table class="table is-flex-grow-1">
+      <Loading v-if="weathersIsLoading"/>
+      <table v-else class="table is-flex-grow-1">
         <thead>
         <tr>
           <th>Date</th>
@@ -41,8 +44,9 @@
         <tr v-for="weather of weathers" :key="weather.date">
           <td>{{ displayDate(weather.date) }}</td>
           <td>
-            <img :src="`http://www.7timer.info/img/misc/about_civil_${ weather.weather }.png`"
-                 alt=""
+            <img
+                :src="`http://www.7timer.info/img/misc/about_civil_${ weather.weather }.png`"
+                alt=""
             />
           </td>
           <td>{{ displayInDegree(weather.temp2m.min) }} °{{ degree }}</td>
@@ -52,7 +56,8 @@
       </table>
     </div>
     <div class="panel-block" v-if="mode === 'detailed'">
-      <table class="table">
+      <Loading v-if="detailsWeathersIsLoading"/>
+      <table v-else class="table">
         <thead>
         <tr>
           <th>Time</th>
@@ -77,15 +82,15 @@
   </article>
 </template>
 <script>
-import {setMinutes, add, format, parse} from 'date-fns'
-
-import API from "@/api/weather.api";
-import LMap from "@/components/LMap";
+import { setMinutes, add, format, parse } from 'date-fns';
+import LMap from '@/components/LMap';
+import Loading from '@/components/Loading';
 
 export default {
   name: 'City',
   components: {
-    LMap
+    LMap,
+    Loading
   },
   props: {
     cityName: {
@@ -97,32 +102,45 @@ export default {
     return {
       degree: 'C',
       mode: 'simple',
-      weathers: null,
-      detailedWeather: null,
-    }
+    };
   },
   methods: {
     displayInDegree(temperature) {
-      return this.degree === 'C' ? temperature : temperature * (9 / 5) + 32
+      return this.degree === 'C' ? temperature : temperature * (9 / 5) + 32;
     },
     displayHour(time) {
-      return format(setMinutes(add(new Date(), {hours: time + 1 - 3}), 0), 'dd/MM/yyyy HH:mm')
+      return format(setMinutes(add(new Date(), { hours: time + 1 - 3 }), 0), 'dd/MM/yyyy HH:mm');
     },
     displayDate(date) {
-      return format(parse(date, 'yyyyMMdd', new Date()), 'dd/MM/yyyy')
+      return format(parse(date, 'yyyyMMdd', new Date()), 'dd/MM/yyyy');
     }
   },
   computed: {
+    currentCityName() {
+      return this.$store.getters.currentCity;
+    },
     cityLatitude() {
-      return this.$store.getters.getCityPosition(this.cityName)[0]
+      return this.$store.getters.getCityPosition(this.cityName)[0];
     },
     cityLongitude() {
-      return this.$store.getters.getCityPosition(this.cityName)[1]
+      return this.$store.getters.getCityPosition(this.cityName)[1];
+    },
+    weathers() {
+      return this.$store.getters.currentWeather;
+    },
+    weathersIsLoading() {
+      return this.$store.getters.isCurrentWeatherLoading;
+    },
+    detailedWeather() {
+      return this.$store.getters.currentDetailsWeather;
+    },
+    detailsWeathersIsLoading() {
+      return this.$store.getters.isCurrentDetailsWeatherLoading;
     }
   },
   created() {
-    API.getCityNextWeekWeather(this.cityLongitude, this.cityLatitude).then(w => this.weathers = w)
-    API.getCityDetailedWeather(this.cityLongitude, this.cityLatitude).then(res => this.detailedWeather = res)
+    this.$store.dispatch('selectCurrentCity', this.cityName);
+    this.$store.dispatch('fetchCurrentWeathers');
   }
-}
+};
 </script>
