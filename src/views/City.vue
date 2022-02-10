@@ -76,53 +76,46 @@
     </div>
   </article>
 </template>
-<script>
+<script setup>
 import {setMinutes, add, format, parse} from 'date-fns'
 
 import API from "@/api/weather.api";
-import LMap from "@/components/LMap";
+import LMap from "@/components/LMap.vue";
+import {computed, onMounted, ref} from "vue";
+import {useStore} from "vuex";
 
-export default {
-  name: 'City',
-  components: {
-    LMap
-  },
-  props: {
-    cityName: {
-      type: String,
-      required: true
-    }
-  },
-  data() {
-    return {
-      degree: 'C',
-      mode: 'simple',
-      weathers: null,
-      detailedWeather: null,
-    }
-  },
-  methods: {
-    displayInDegree(temperature) {
-      return this.degree === 'C' ? temperature : temperature * (9 / 5) + 32
-    },
-    displayHour(time) {
-      return format(setMinutes(add(new Date(), {hours: time + 1 - 3}), 0), 'dd/MM/yyyy HH:mm')
-    },
-    displayDate(date) {
-      return format(parse(date, 'yyyyMMdd', new Date()), 'dd/MM/yyyy')
-    }
-  },
-  computed: {
-    cityLatitude() {
-      return this.$store.getters.getCityPosition(this.cityName)[0]
-    },
-    cityLongitude() {
-      return this.$store.getters.getCityPosition(this.cityName)[1]
-    }
-  },
-  created() {
-    API.getCityNextWeekWeather(this.cityLongitude, this.cityLatitude).then(w => this.weathers = w)
-    API.getCityDetailedWeather(this.cityLongitude, this.cityLatitude).then(res => this.detailedWeather = res)
+const store = useStore();
+
+const props = defineProps({
+  cityName: {
+    type: String,
+    required: true
   }
+})
+
+const degree = ref('C');
+const mode = ref('simple');
+const weathers = ref(null);
+const detailedWeather = ref(null);
+
+const displayInDegree = (temperature) => {
+  return degree.value === 'C' ? temperature : temperature * (9 / 5) + 32
 }
+const displayHour = (time) => {
+  return format(setMinutes(add(new Date(), {hours: time + 1 - 3}), 0), 'dd/MM/yyyy HH:mm')
+}
+const displayDate = (date) => {
+  return format(parse(date, 'yyyyMMdd', new Date()), 'dd/MM/yyyy')
+}
+const cityLatitude = computed(() => {
+  return store.getters.getCityPosition(props.cityName)[0]
+})
+const cityLongitude = computed(() => {
+  return store.getters.getCityPosition(props.cityName)[1]
+})
+
+onMounted(() => {
+  API.getCityNextWeekWeather(cityLongitude.value, cityLatitude.value).then(w => weathers.value = w)
+  API.getCityDetailedWeather(cityLongitude.value, cityLatitude.value).then(res => detailedWeather.value = res)
+})
 </script>
