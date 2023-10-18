@@ -33,7 +33,7 @@
   </article>
 </template>
 <script>
-import LMap from "@/components/LMap";
+import LMap from "@/components/LMap.vue";
 
 export default {
   name: 'City',
