@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     latLongMap: {
-      GRENOBLE: [45.189397, 5.722261],
+      GRENOBLE: [45.18929, 5.72226],
       SINGAPOUR: [1.295600, 103.858995],
       BORDEAUX: [44.848089, -0.571017],
       BREST: [48.389397, -4.499237],
