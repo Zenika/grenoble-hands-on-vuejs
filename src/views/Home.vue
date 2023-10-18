@@ -1,3 +1,11 @@
+<script setup>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+const cities = computed(() => store.getters.getCities)
+</script>
+
 <template>
   <section>
     <h1 class="title">Offices</h1>
@@ -9,12 +17,3 @@
     </div>
   </section>
 </template>
-<script>
-export default {
-  computed: {
-    cities () {
-      return this.$store.getters.getCities
-    }
-  }
-}
-</script>
