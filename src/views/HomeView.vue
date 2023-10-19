@@ -1,5 +1,5 @@
 <script setup>
-import { useCitiesStore } from '@/store/cities.store'
+import { useCitiesStore } from '../store/cities.store'
 
 const store = useCitiesStore()
 const cities = store.cities

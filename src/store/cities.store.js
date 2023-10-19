@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 export const useCitiesStore = defineStore('cities', () => {
   // State
@@ -56,8 +56,8 @@ export const useCitiesStore = defineStore('cities', () => {
     },
   ])
 
-  // Getters
-  const cityByName = computed(() => cityName => cities.value.find(city => city.name === cityName))
+  // Actions
+  const getCityByName = cityName => cities.value.find(city => city.name === cityName)
 
-  return { cities, cityByName }
+  return { cities, getCityByName }
 })

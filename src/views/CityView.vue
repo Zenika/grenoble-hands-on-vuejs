@@ -2,7 +2,7 @@
 // TODO Remove this rule with step 2
 /* eslint-disable no-unused-vars */
 import { reactive, ref } from 'vue'
-import LMap from '@/components/LMap.vue'
+import LMap from '../components/LMap.vue'
 
 const props = defineProps({
   cityName: {
