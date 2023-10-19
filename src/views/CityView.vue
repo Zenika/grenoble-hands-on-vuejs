@@ -1,4 +1,6 @@
 <script setup>
+// TODO Remove this rule with step 2
+/* eslint-disable no-unused-vars */
 import { reactive, ref } from 'vue'
 import LMap from '@/components/LMap.vue'
 
