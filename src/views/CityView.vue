@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import LMap from '../components/LMap.vue'
-import { getCityTodayWeather } from '../api/weather.api'
+import { getCityNextWeekWeather } from '../api/weather.api'
 import { useCitiesStore } from '../store/cities.store'
 
 const props = defineProps({
@@ -12,10 +12,10 @@ const props = defineProps({
 })
 const store = useCitiesStore()
 const { latitude, longitude } = store.getCityByName(props.cityName)
-const weather = ref(null)
+const weathers = ref([])
 
 onMounted(async () => {
-  weather.value = await getCityTodayWeather(longitude, latitude)
+  weathers.value = await getCityNextWeekWeather(longitude, latitude)
 })
 </script>
 
@@ -37,11 +37,11 @@ onMounted(async () => {
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>{{ weather?.date }}</td>
-          <td><img :src="`http://www.7timer.info/img/misc/about_civil_${weather?.weather}.png`" alt="" width="80" /></td>
-          <td>{{ weather?.temp2m.min }} °C</td>
-          <td>{{ weather?.temp2m.max }} °C</td>
+        <tr v-for="weather in weathers" :key="weather">
+          <td>{{ weather.date }}</td>
+          <td><img :src="`http://www.7timer.info/img/misc/about_civil_${weather.weather}.png`" alt="" width="80" /></td>
+          <td>{{ weather.temp2m.min }} °C</td>
+          <td>{{ weather.temp2m.max }} °C</td>
         </tr>
         </tbody>
       </table>
