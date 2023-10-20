@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import LMap from '../components/LMap.vue'
 import { getCityNextWeekWeather } from '../api/weather.api'
 import { useCitiesStore } from '../store/cities.store'
+import { useDegree } from '../composable/degree.composable'
 
 const props = defineProps({
   cityName: {
@@ -12,6 +13,8 @@ const props = defineProps({
 })
 const store = useCitiesStore()
 const { latitude, longitude } = store.getCityByName(props.cityName)
+const { degree, getTemperature } = useDegree()
+
 const weathers = ref([])
 
 onMounted(async () => {
@@ -27,6 +30,18 @@ onMounted(async () => {
       <l-map :zoom="13" :lat="latitude" :long="longitude" />
     </div>
     <div class="panel-block">
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="degree" value="C" v-model="degree">
+          °C
+        </label>
+        <label class="radio">
+          <input type="radio" name="degree" value="F" v-model="degree">
+          °F
+        </label>
+      </div>
+    </div>
+    <div class="panel-block">
       <table class="table is-flex-grow-1">
         <thead>
         <tr>
@@ -40,8 +55,8 @@ onMounted(async () => {
         <tr v-for="weather in weathers" :key="weather">
           <td>{{ weather.date }}</td>
           <td><img :src="`http://www.7timer.info/img/misc/about_civil_${weather.weather}.png`" alt="" width="80" /></td>
-          <td>{{ weather.temp2m.min }} °C</td>
-          <td>{{ weather.temp2m.max }} °C</td>
+          <td>{{ getTemperature(weather.temp2m.min) }} °{{ degree }}</td>
+          <td>{{ getTemperature(weather.temp2m.max) }} °{{ degree }}</td>
         </tr>
         </tbody>
       </table>
