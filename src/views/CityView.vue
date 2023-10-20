@@ -1,9 +1,8 @@
 <script setup>
-// TODO Remove this rule with step 2
-/* eslint-disable no-unused-vars */
 import { onMounted, ref } from 'vue'
 import LMap from '../components/LMap.vue'
 import { getCityTodayWeather } from '../api/weather.api'
+import { useCitiesStore } from '../store/cities.store'
 
 const props = defineProps({
   cityName: {
@@ -11,22 +10,21 @@ const props = defineProps({
     required: true
   }
 })
-
-const cityLatitude = ref(45.183916)
-const cityLongitude = ref(5.703630)
+const store = useCitiesStore()
+const { latitude, longitude } = store.getCityByName(props.cityName)
 const weather = ref(null)
 
 onMounted(async () => {
-  weather.value = await getCityTodayWeather(cityLongitude, cityLatitude)
+  weather.value = await getCityTodayWeather(longitude, latitude)
 })
 </script>
 
 <template>
   <h1 class="title">Cities weather</h1>
   <article class="panel is-primary">
-    <div class="panel-heading"><h2>GRENOBLE</h2></div>
+    <div class="panel-heading"><h2>{{ props.cityName }}</h2></div>
     <div class="panel-block">
-      <l-map :zoom="13" :lat="cityLatitude" :long="cityLongitude" />
+      <l-map :zoom="13" :lat="latitude" :long="longitude" />
     </div>
     <div class="panel-block">
       <table class="table is-flex-grow-1">
