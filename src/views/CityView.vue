@@ -23,7 +23,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1 class="title">Cities weather</h1>
+  <h2 class="title">Cities weather</h2>
   <article class="panel is-primary">
     <div class="panel-heading"><h2>{{ props.cityName }}</h2></div>
     <div class="panel-block">

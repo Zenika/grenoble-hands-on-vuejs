@@ -13,6 +13,12 @@ const routes = [
     name: 'City',
     props: true,
     component: City
+  },
+  {
+    path: '/create/city',
+    name: 'CreateCity',
+    props: true,
+    component: () => import('../views/CreateCityView.vue')
   }
 ]
 

@@ -59,5 +59,7 @@ export const useCitiesStore = defineStore('cities', () => {
   // Actions
   const getCityByName = cityName => cities.value.find(city => city.name === cityName)
 
-  return { cities, getCityByName }
+  const addCity = ({ name, longitude, latitude }) => cities.value.push({ name, longitude, latitude })
+
+  return { cities, getCityByName, addCity }
 })

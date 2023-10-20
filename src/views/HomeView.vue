@@ -7,7 +7,7 @@ const cities = store.cities
 
 <template>
   <section>
-    <h1 class="title">Offices</h1>
+    <h2 class="title">Offices</h2>
 
     <div class="panel">
       <router-link
