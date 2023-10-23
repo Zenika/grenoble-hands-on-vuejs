@@ -67,7 +67,7 @@ See [Configuration Reference](https://vitejs.dev/config/).
 
 <details>
   <summary>Step 1</summary>
-  https://github.com/Zenika/grenoble-hands-on-vuejs/compare/step0...step1
+  https://github.com/Zenika/grenoble-hands-on-vuejs/compare/master...step1
 </details>
 
 <details>

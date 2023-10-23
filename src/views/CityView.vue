@@ -43,7 +43,7 @@ const weather = reactive({
         <tbody>
         <tr>
           <td>Aujourd’hui</td>
-          <td><img src="http://www.7timer.info/img/misc/about_civil_clear.png" alt="" /></td>
+          <td><img src="http://www.7timer.info/img/misc/about_civil_clear.png" alt="" width="80" /></td>
           <td>0°C</td>
           <td>30°C</td>
         </tr>
@@ -57,3 +57,9 @@ const weather = reactive({
     </div>
   </article>
 </template>
+
+<style scoped>
+td {
+  vertical-align: middle;
+}
+</style>
