@@ -44,8 +44,8 @@ const weather = reactive({
         <tr>
           <td>Aujourd’hui</td>
           <td><img src="http://www.7timer.info/img/misc/about_civil_clear.png" alt="" width="80" /></td>
-          <td>0°C</td>
-          <td>30°C</td>
+          <td>0 °C</td>
+          <td>30 °C</td>
         </tr>
         </tbody>
       </table>
