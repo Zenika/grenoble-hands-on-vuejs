@@ -8,11 +8,9 @@ const zoomLevel = ref(13)
 
 onMounted(() => {
   map.value = L.map('mapId').setView([props.lat, props.long], zoomLevel.value)
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 18,
-    tileSize: 512,
-    zoomOffset: -1
+    maxZoom: 18
   }).addTo(map.value)
   L.marker([props.lat, props.long]).addTo(map.value)
 })
