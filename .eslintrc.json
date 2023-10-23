@@ -6,5 +6,8 @@
   ],
   "parserOptions": {
     "ecmaVersion": 2022
+  },
+  "rules": {
+    "eol-last": ["error", "always"]
   }
 }
