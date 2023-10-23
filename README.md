@@ -62,6 +62,7 @@ See [Configuration Reference](https://vitejs.dev/config/).
 - Créer un nouveau point d'entrée sur le service d'api pour consommer ces données
 - Afficher le résultat de la météo détaillée sur la page de la ville
 - Ajouter un bouton pour afficher le mode simple ou le mode détaillé
+- Afficher un loader pendant le chargement des données pour faire patienter l'utilisateur, avec une durée d'au moins 2 secondes.
 
 ## Correction
 
