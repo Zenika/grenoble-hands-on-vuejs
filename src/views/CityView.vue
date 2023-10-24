@@ -44,7 +44,7 @@ const weather = reactive({
         <tbody>
         <tr>
           <td>Aujourd’hui</td>
-          <td><img :src="`https://ssl.gstatic.com/onebox/weather/48/${getWeatherState('clear')}.png`" alt="" width="40" /></td>
+          <td><img :src="`https://ssl.gstatic.com/onebox/weather/256/${getWeatherState('rain')}.png`" alt="" width="40" /></td>
           <td>0 °C</td>
           <td>30 °C</td>
         </tr>
