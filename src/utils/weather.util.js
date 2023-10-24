@@ -1,0 +1,63 @@
+export const getWeatherState = (weather) => {
+  switch (weather) {
+    case 'clear':
+    case 'clearday':
+    case 'clearnight':
+      return 'sunny'
+    case 'pcloudy':
+    case 'pcloudyday':
+    case 'pcloudynight':
+    case 'windy':
+    case 'windyday':
+    case 'windynight':
+      return 'partly_cloudy'
+    case 'mcloudy':
+    case 'mcloudynight':
+    case 'mcloudyday':
+      return 'cloudy_s_sunny'
+    case 'cloudy':
+    case 'cloudyday':
+    case 'cloudynight':
+      return 'cloudy'
+    case 'fog':
+    case 'fogday':
+    case 'fognight':
+    case 'humid':
+    case 'humidnight':
+    case 'humidday':
+      return 'fog'
+    case 'lightrain':
+    case 'lightrainday':
+    case 'lightrainnight':
+    case 'rain':
+    case 'rainday':
+    case 'rainnight':
+      return 'rain'
+    case 'oshower':
+    case 'oshowerday':
+    case 'oshowernight':
+      return 'rain_s_sunny'
+    case 'ishower':
+    case 'ishowerday':
+    case 'ishowernight':
+      return 'sunny_s_rain'
+    case 'lightsnow':
+    case 'lightsnowday':
+    case 'lightsnownight':
+      return 'snow_light'
+    case 'snow':
+    case 'snowday':
+    case 'snownight':
+      return 'snow'
+    case 'rainsnow':
+    case 'rainsnowday':
+    case 'rainsnownight':
+      return 'sleet'
+    case 'ts':
+    case 'tstorm':
+    case 'tsrrain':
+      return 'thunderstorms'
+    default:
+      return 'unknown'
+  }
+}
